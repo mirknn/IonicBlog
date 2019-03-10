@@ -1,10 +1,24 @@
-import { Directive } from '@angular/core';
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appHasRole]'
 })
-export class HasRoleDirective {
+export class HasRoleDirective implements OnInit {
 
-  constructor() { }
+  @Input('appHasRole') roles: string[];
 
+  constructor(private authService: AuthService, private templateRef: TemplateRef<any>,
+  private viewContainer: ViewContainerRef) { }
+
+  ngOnInit() {
+    this.authService.getUserSubject().subscribe(_ =>{
+      if (this.authService.hasRoles(this.roles)) {
+        this.viewContainer.createEmbeddedView(this.templateRef);
+      } else {
+        this.viewContainer.clear();
+      }
+    });
+  }  
 }

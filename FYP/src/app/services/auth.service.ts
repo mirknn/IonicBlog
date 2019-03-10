@@ -19,12 +19,12 @@ export class AuthService {
     constructor() { }
 
   login(name){
-    if (name=='Lisa') {
+    if (name=='user') {
       this.currentUser.next({
         name: 'User',
         roles: ['read-content','user']
       });
-    } else if (name =='Admin') {
+    } else if (name =='admin') {
       this.currentUser.next({
         name: 'Admin',
         roles: ['read-content', 'admin']
@@ -42,11 +42,10 @@ export class AuthService {
 
   hasRoles(roles: string[]): boolean {
     for (const oneRole of roles){
-      if (!this.currentUser || !this.currentUser.value.roles.includes(oneRole)){
+      if (!this.currentUser.value || !this.currentUser.value.roles.includes(oneRole)){
         return false;
       }
     }
-
     return true;
   }
 }

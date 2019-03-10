@@ -1,12 +1,28 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      Ionic Role Elements
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <ion-button expand="full" (click)="loginAdmin()" *ngIf="!authenticated">Login as Admin</ion-button>
+  <ion-button expand="full" (click)="loginUser()" *ngIf="!authenticated">Login as User</ion-button>
+  <ion-button expand="full" (click)="logout()" *ngIf="authenticated">Logout</ion-button>
+
+  <ion-card color="primary" *appHasRole="['read-content']">
+    <ion-card-header>My User content</ion-card-header> <!--Embed google form-->
+    <ion-card-content>
+      Things every logged in user can see
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="secondary" *appHasRole="['read-content', 'admin']" [@fadeInOut]>
+    <ion-card-header>My Admin content</ion-card-header> <!--Embed Admin view w/ Google form responses-->
+    <ion-card-content>
+      Things only admin can see 
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
