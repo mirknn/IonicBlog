@@ -1,27 +1,27 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      Ionic Role Elements
+    <ion-title font="Miriam">
+      Lisa's Form
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-button expand="full" (click)="loginAdmin()" *ngIf="!authenticated">Login as Admin</ion-button>
-  <ion-button expand="full" (click)="loginUser()" *ngIf="!authenticated">Login as User</ion-button>
+  <ion-button expand="full" (click)="loginAdmin()" *ngIf="!authenticated">Admin</ion-button>
+  <ion-button expand="full" (click)="loginUser()" *ngIf="!authenticated">User</ion-button>
   <ion-button expand="full" (click)="logout()" *ngIf="authenticated">Logout</ion-button>
 
   <ion-card color="primary" *appHasRole="['read-content']">
-    <ion-card-header>My User content</ion-card-header> <!--Embed google form-->
+    <ion-card-header>User content</ion-card-header> <!--Embed google form-->
     <ion-card-content>
-      Things every logged in user can see
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVi44X-ggX40gmvO1xmYhvNiKVSf0Aiwmw8uDt8OUyZMErkA/viewform?embedded=true" width="338" height="755" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> 
     </ion-card-content>
   </ion-card>
 
   <ion-card color="secondary" *appHasRole="['read-content', 'admin']" [@fadeInOut]>
-    <ion-card-header>My Admin content</ion-card-header> <!--Embed Admin view w/ Google form responses-->
+    <ion-card-header>Admin content</ion-card-header> <!--Embed Admin view w/ Google form responses-->
     <ion-card-content>
-      Things only admin can see 
+      Google form responses 
     </ion-card-content>
   </ion-card>
 

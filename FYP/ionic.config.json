@@ -1,6 +1,8 @@
 {
   "name": "FYP",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "f86de5d5"
 }

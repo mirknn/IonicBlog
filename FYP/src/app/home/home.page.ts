@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { trigger, transition, animate, style } from '@angular/animations'
+import { trigger, transition, animate, style } from '@angular/animations';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   animations: [
     trigger('fadeInOut', [
-      transition('enter:', [
+      transition('void => *', [
         style({opacity: 0}),
         animate('200ms ease-in', style({ opacity: 1 }))
       ]),
-      transition(':leave', [
+      transition('* => void', [
         animate('200ms ease-in', style({ opacity: 0}))
       ])
     ])
