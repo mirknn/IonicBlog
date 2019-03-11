@@ -8,7 +8,7 @@ import { trigger, transition, animate, style } from '@angular/animations';
   styleUrls: ['home.page.scss'],
   animations: [
     trigger('fadeInOut', [
-      transition('void => *', [
+      transition('void => *', [ 
         style({opacity: 0}),
         animate('200ms ease-in', style({ opacity: 1 }))
       ]),

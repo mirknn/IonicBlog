@@ -7,22 +7,22 @@
 </ion-header>
 
 <!--Login buttons-->
-<ion-content padding>
+<ion-content scroll="true" padding>
   <ion-button expand="full" (click)="loginAdmin()" *ngIf="!authenticated">Admin</ion-button>
   <ion-button expand="full" (click)="loginUser()" *ngIf="!authenticated">User</ion-button>
   <ion-button expand="full" (click)="logout()" *ngIf="authenticated">Logout</ion-button>
 
 <!--User view-->
   <ion-card color="primary" *appHasRole="['read-content']">
-    <ion-card-header>User content</ion-card-header> <!--Embed google form-->
+    <ion-card-header></ion-card-header> <!--Embed google form-->
     <ion-card-content>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVi44X-ggX40gmvO1xmYhvNiKVSf0Aiwmw8uDt8OUyZMErkA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> 
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVi44X-ggX40gmvO1xmYhvNiKVSf0Aiwmw8uDt8OUyZMErkA/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> 
     </ion-card-content>
   </ion-card>
 
 <!--Admin view-->
   <ion-card color="secondary" *appHasRole="['read-content', 'admin']" [@fadeInOut]>
-    <ion-card-header>Admin content</ion-card-header> <!--Embed Admin view w/ Google form responses-->
+    <ion-card-header></ion-card-header> <!--Embed Admin view w/ Google form responses-->
     <ion-card-content>
       Google form responses 
     </ion-card-content>
