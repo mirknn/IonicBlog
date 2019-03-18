@@ -27,7 +27,7 @@ export class AuthService {
     } else if (name =='admin') {
       this.currentUser.next({
         name: 'Admin',
-        roles: ['read-content', 'admin']
+        roles: ['admin']
       });
     }
   }
