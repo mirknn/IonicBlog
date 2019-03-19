@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-     Lisa's App
+     Show/Hide App
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,14 +16,11 @@
 
  <!--User view-->
   <div class="iframe-container" *appHasRole="['read-content']" [@fadeInOut]>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVi44X-ggX40gmvO1xmYhvNiKVSf0Aiwmw8uDt8OUyZMErkA/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" ></iframe> 
+     <!--EMBED GOOGLE FORM IFRAME HERE-->
   </div>
 
 <!--Admin view-->
   <div class="iframe-container" *appHasRole="['admin']" [@fadeInOut]>
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNqBtEBd8h0a_2c6HHTjYyz8BOWWD3NzZwvesJi6A-m2w3RCHSMbpAH2KZtpu7kaZOTEAucAqA98hf/pubchart?oid=751118009&amp;format=interactive" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" ></iframe>
+     <!--EMBED GOOGLE RESPONSES SPREADSHEET LINK HERE-->
   </div>
 
- <!--<ion-content *appHasRole="['read-content', 'admin']" [@fadeInOut]>
-  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRbqh6XDtPwJMj4iLc2v89tu2JABTaaba6jeNkJM0_HoWS8tmPYLIrc88BiRtcGovLE7G9UyMZWB28X/pubhtml?widget=true&amp;headers=false" allowfullscreen></iframe>
-</ion-content>-->
